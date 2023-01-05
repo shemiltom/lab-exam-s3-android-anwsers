@@ -1,0 +1,39 @@
+package com.example.sjcet.database;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    EditText name,phone,mail;
+    Button add,delete;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        name=(EditText) findViewById(R.id.ed1);
+        phone=(EditText) findViewById(R.id.ed2);
+        mail=(EditText) findViewById(R.id.ed3);
+        add=(Button) findViewById(R.id.bt1);
+        delete=(Button) findViewById(R.id.bt2);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "inserted", Toast.LENGTH_SHORT).show();
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+}
